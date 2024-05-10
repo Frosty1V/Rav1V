@@ -7,7 +7,7 @@ const handler = async (m, {conn, text, isROwner, isOwner}) => {
   if (text) {
     m.reply('*تــم وضــع رســالــة الــتـرحـيب !*')
   } else throw `*أدخــل رســالــة الـتـرحــيب !*\n*عــشان تــعـمل مـنــشن أكــتب @user, عــشان تـحط أســم الـجروب أكـتب @group, عــشان تـحط وصــف أكــتب @desc*`
-}
+};
 handler.help = ['setwelcome <text>']
 handler.tags = ['group']
 handler.command = ['الترحيب'] 
