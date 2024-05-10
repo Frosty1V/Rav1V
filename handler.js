@@ -67,6 +67,7 @@ export async function handler(chatUpdate) {
         if (!isNumber(user.joincount)) user.joincount = 2;
         if (!isNumber(user.limit)) user.limit = 20;
         if (!isNumber(user.money)) user.money = 15;
+	if (!('language' in user)) user.language = 'es';
         if (!('registered' in user)) user.registered = false;
         if (!user.registered) {
           if (!('name' in user)) user.name = m.name;
@@ -895,6 +896,7 @@ export async function handler(chatUpdate) {
           wolflastfeed: 0,
           wood: 0,
           wortel: 0,
+	  language: 'es',
         };
       }
       const akinator = global.db.data.users[m.sender].akinator;
@@ -929,6 +931,7 @@ export async function handler(chatUpdate) {
         global.db.data.chats[m.chat] = {};
       }
       if (chat) {
+        if (!('language' in chat)) chat.language = 'es';
         if (!('isBanned' in chat)) chat.isBanned = false;
         if (!('welcome' in chat)) chat.welcome = true;
         if (!('detect' in chat)) chat.detect = true;
@@ -977,6 +980,7 @@ export async function handler(chatUpdate) {
 	  modoadmin: false,
 	  simi: false,
           expired: 0,
+	  language: 'es',
         };
       }
       const settings = global.db.data.settings[this.user.jid];
@@ -1009,6 +1013,9 @@ export async function handler(chatUpdate) {
     } catch (e) {
       console.error(e);
     }
+    const idioma = global.db.data.users[m.sender]?.language || 'es';
+    const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+    const tradutor = _translate.handler.handler
     if (opts['nyimak']) {
       return;
     }
@@ -1409,6 +1416,11 @@ const messageText = `
  * @param {import('@whiskeysockets/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate
  */
 export async function participantsUpdate({id, participants, action}) {
+
+  const idioma = global.db.data.chats[id]?.language || 'es';
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.handler.participantsUpdate
+	
   const m = mconn
   if (opts['self']) return;
   //if (m.conn.isInit) return;
@@ -1469,6 +1481,11 @@ export async function participantsUpdate({id, participants, action}) {
  * @param {import('@whiskeysockets/baileys').BaileysEventMap<unknown>['groups.update']} groupsUpdate
  */
 export async function groupsUpdate(groupsUpdate) {
+
+  const idioma = global.db.data.chats[groupsUpdate[0].id]?.language || 'es';
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.handler.participantsUpdate
+	
   if (opts['self']) {
     return;
   }
@@ -1506,6 +1523,12 @@ export async function callUpdate(callUpdate) {
 }
 
 export async function deleteUpdate(message) {
+  const datas = global
+  const id = message.participant
+  const idioma = datas.db.data.users[id]?.language || 'es';
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.handler.deleteUpdate
+
 let d = new Date(new Date + 3600000)
 let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' })
  let time = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
@@ -1532,6 +1555,11 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
 }
 
 global.dfail = (type, m, conn) => {
+  const datas = global
+  const idioma = datas.db.data.users[m.sender].language || 'es';
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.handler.dfail
+	
   const msg = {
    rowner: '*هذا الأمر يمكن استخدامه فقط بواسطة المطور*',
    owner: '*هذا الأمر يمكن استخدامه فقط بواسطة المطور*',
