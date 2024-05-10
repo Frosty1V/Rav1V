@@ -1542,12 +1542,12 @@ global.dfail = (type, m, conn) => {
     group: '*هذا الامر فقط يستطيع ان يستخدم في الجروبات*',
     private: '*هذا الامر يستطيع فقط ان يستخدم في الخاص*',
     admin: '*هذا الامر يستطيع فقط المشرفون ان يستخدموه*',
-    botAdmin: '*لاتخدام هذا الامر يجب ان يكون البوت مشرفا في هذا الجروب*',
+    botAdmin: '*لاستخدام هذا الامر يجب ان يكون البوت مشرفا في هذا الجروب*',
     unreg: '*فكك من الامر الزفت ده انا مكسل امسحه*',
     restrict: '*هذا الامر لن يشتغل*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
-  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] Warning*', body: 'BOBIZABOT', thumbnail: imagen1, sourceUrl: 'https://instagram.com/noureddine_ouafy'}}}}, aa);
+  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage:, aa);
   if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
 
