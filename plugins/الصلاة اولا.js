@@ -7,22 +7,22 @@ export async function before(m) {
         return false;
     }
     let jadwalSholat = {
-        الفجر: "06:39",
-        الضحى: "08:10",
-        الظهر: "13:41",
-        العصر: "16:50",
-        المغرب: "19:15",
-        العشاء: "20:33"
+        الفجر: "04:27",
+        الضحى: "06:05",
+        الظهر: "12:51",
+        العصر: "04:29",
+        المغرب: "07:38",
+        العشاء: "09:05"
     };
     const date = new Date(new Date().toLocaleString("en-US", {
-      timeZone:"Africa/Casablanca"
+      timeZone:"Africa/Cairo"
     }));
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const timeNow = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
     for (const [sholat, waktu] of Object.entries(jadwalSholat)) {
         if (timeNow === waktu) {
-            let caption = `السلام  عليكم   *${name}*,\nحان موعد صلاة *${sholat}* اذهب و توضأ بسرعة و قم لصلاتك ♥ ولا تنسانا من الدعاء.\n\n*${waktu}*\n_هذا توقيت الصلاة في الرباط وما جاورها_`;
+            let caption = `حان موعد صلاة *${sholat}* اذهب و توضأ بسرعة و قم لصلاتك  ولا تنسانا من الدعاء.\n\n*${waktu}*\nهذا توقيت الصلاة في القاهرة`;
             this.autosholat[id] = [
                 this.reply(m.chat, caption, null),
                 setTimeout(() => {
