@@ -5,7 +5,7 @@ import { pinterest } from '../lib/scrape.js'
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `*مثال:*\n*${usedPrefix + command} لوفي*`
-  conn.reply(m.react, '⌛', m)
+  await m.react('⌛');
 
   try {
     const hasil = await pinterest(text);
