@@ -9,7 +9,6 @@ let handler = async (m, {
     command
 }) => {
             if (!text) return m.reply("هذا الامر خاص ل ويكيبيديا للاستعمال نستخدمه مثل \n*.ويكي القمر*")
-            await m.react('⌛');
             try {
                 let item = await Wiki(text)
                 let cap = `*[ النتيجة ]*
