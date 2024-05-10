@@ -13,7 +13,7 @@ let handler = async (m, { conn, text }) => {
 
 handler.help = ['تغيير البايو']
 handler.tags = ['owner']
-handler.command = /^(تغيير البايو)$/i
+handler.command = /^(البايو)$/i
 handler.owner = true
 
 export default handler
