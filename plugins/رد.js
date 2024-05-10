@@ -34,7 +34,7 @@ if (/^فروست/i.test(m.text) ) {
    }
             if(/اوامر/i.test(m.text) ) {
             
-       conn.reply(m.chat,`اكتب قائمة`, m)
+       conn.reply(m.chat,`اكتب .قائمه`, m)
    }
 
 
