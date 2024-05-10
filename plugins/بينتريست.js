@@ -4,8 +4,8 @@ import fetch from 'node-fetch'
 import { pinterest } from '../lib/scrape.js'
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `*لتحميل الصور من pinterest* سوف يرسل لك اكثر من 5 صور ذاك جودة عالية\n\n*مثال:*\n*${usedPrefix + command} boy*`
-  conn.reply(m.chat, 'انتظر قليلا...', m)
+  if (!text) throw `*مثال:*\n*${usedPrefix + command} لوفي*`
+  conn.reply(m.react, '⌛', m)
 
   try {
     const hasil = await pinterest(text);
@@ -37,5 +37,5 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
 handler.help = ['pinterest2']
 handler.tags = ['downloader']
-handler.command = /^بينتريست2$/i
+handler.command = /^صور$/i
 export default handler
