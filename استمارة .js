@@ -28,5 +28,7 @@ const handler = async (m, { conn }) => {
 
 handler.help = ['استمارة'];
 handler.tags = ['tools'];
+handler.command = ['استمارة'];
+
 
 module.exports = handler;
