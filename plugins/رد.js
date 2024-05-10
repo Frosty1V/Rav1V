@@ -32,10 +32,10 @@ if (/^فروست/i.test(m.text) ) {
        conn.reply(m.chat, `ولك `, m) 
 
    }
-            if(/اوامر/i.test(m.test))
-            {
-             conn.reply(m.chat,`اكتب قائمة`, m)
-            }
+            if(/اوامر/i.test(m.text) ) {
+            
+       conn.reply(m.chat,`اكتب قائمة`, m)
+   }
 
 
   return !0 } 
