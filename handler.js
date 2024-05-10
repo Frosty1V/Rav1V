@@ -35,8 +35,6 @@ export async function handler(chatUpdate) {
     return;
   }
   if (global.db.data == null) await global.loadDatabase();
-  /* Creditos a Otosaka (https://wa.me/51993966345) */
-
   if (global.chatgpt.data === null) await global.loadChatgptDB();
 
   /* ------------------------------------------------*/
