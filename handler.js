@@ -1266,11 +1266,11 @@ const messageText = `
           m.exp += xp;
         }
         if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-          mconn.conn.reply(m.chat, `*[ ℹ️ ] لقد نفد الماس الخاص بك، يمكنك شراء المزيد باستخدام الأمر: ${usedPrefix}buyall*`, m);
+          mconn.conn.reply(m.chat, `بص صراحه مش عارف ازاي اشيل الالماس فا فكك منه`, m);
           continue; 
         }
         if (plugin.level > _user.level) {
-          mconn.conn.reply(m.chat, `*[ ℹ️ ] It is required to have the level ${plugin.level}  to be able to use the command. Your current level is${_user.level},use the command  ${usedPrefix}lvl to raise your level with XP.*`, m);
+          mconn.conn.reply(m.chat, `بص صراحه مش عارف ازاي اشيل الليفل فا فكك منه`, m);
           continue; 
         }
         const extra = {
@@ -1535,16 +1535,16 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
 
 global.dfail = (type, m, conn) => {
   const msg = {
-    rowner: '*[ ℹ️ ] This command can only be used by the bot owner.*',
-    owner: '*[ ℹ️ ] This command can only be used by the bot owner.*',
-    mods: '*[ ℹ️ ] This command can only be used by moderators and the bot owner.*',
-    premium: '*[ ℹ️ ] This command can only be used by premium users and the bot owner.*',
-    group: '*[ ℹ️ ] This command can only be used in groups.*',
-    private: '*[ ℹ️ ] This command can only be used in the bot s private chat.*',
-    admin: '*[ ℹ️ ] This command can only be used by group administrators.*',
-    botAdmin: '*[ ℹ️ ] To use this command it is necessary that the bot be an administrator of the group.*',
-    unreg: '*[ ℹ️ ] To use this command you must be registered.*\n\n*[ 💡 ] Use the command:* _#verify name.age_ *to register.*',
-    restrict: '*[ ℹ️ ] This command was disabled by the bot owner.*',
+    rowner: '*هذا الامر يستطيع فقط المطور ان يستخدمه*',
+    owner: '*هذا الامر يستطيع فقط المطور ان يستخدمه*',
+    mods: '*هذا الامر يستطيع فقط المطور و المودز ان يستخدموه*',
+    premium: '*هذا الامر يستطيع فقط من معه ال premium والمطور فقط ان يستخدمه*',
+    group: '*هذا الامر فقط يستطيع ان يستخدم في الجروبات*',
+    private: '*هذا الامر يستطيع فقط ان يستخدم في الخاص*',
+    admin: '*هذا الامر يستطيع فقط المشرفون ان يستخدموه*',
+    botAdmin: '*لاتخدام هذا الامر يجب ان يكون البوت مشرفا في هذا الجروب*',
+    unreg: '*فكك من الامر الزفت ده انا مكسل امسحه*',
+    restrict: '*هذا الامر لن يشتغل*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
   const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] Warning*', body: 'BOBIZABOT', thumbnail: imagen1, sourceUrl: 'https://instagram.com/noureddine_ouafy'}}}}, aa);
