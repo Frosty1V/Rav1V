@@ -9,7 +9,7 @@ let handler = async (m, { conn, text }) => {
 }
 handler.help = ['setbio']
 handler.tags = ['owner']
-handler.command = /^(تغيير البايو)$/i
+handler.command = /^(تغيير_البايو)$/i
 handler.owner = true
 
 export default handler
