@@ -329,14 +329,15 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = 'منور/ه!\n@user';
-  conn.bye = 'نراك/ي لاحقا\n@user';
-  conn.spromote = '*@user\nلقد اصبح مشرفا الان*';
-  conn.sdemote = '*@user\nلم يعد مشرفا بعد الان*';
-  conn.sDesc = '*تم تغيير وصف الجروب*';
-  conn.sSubject = '*تم تغير اسم الجروب*';
-  conn.sIcon = '*تم تغيير اسم الجروب*';
-  conn.sRevoke = '*تم تغيير لينك الجروب*';
+conn.welcome = 'مرحباً بك، @user!';
+conn.bye = 'وداعاً، نتمنى أن نراك مرة أخرى، @user!';
+conn.spromote = '*@user* تم ترقيته/ترقيتها ليصبح مشرف/مشرفة الآن.';
+conn.sdemote = '*@user* تم تنزيله/تنزيلها من رتبة المشرف/المشرفة.';
+conn.sDesc = '*تم تغيير وصف المجموعة بنجاح.*';
+conn.sSubject = '*تم تغيير اسم المجموعة بنجاح.*';
+conn.sIcon = '*تم تغيير صورة المجموعة بنجاح.*';
+conn.sRevoke = '*تم تغيير رابط المجموعة بنجاح.*';
+
 
   conn.handler = handler.handler.bind(global.conn);
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn);
