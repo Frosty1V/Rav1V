@@ -59,9 +59,9 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   // Delete the audio file
   fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
     if (err) {
-      console.error(`Failed to delete audio file: ${err}`);
+      console.error(`فشل لحذف الصوت ${err}`);
     } else {
-      console.log(`Deleted audio file: ${tmpDir}/${title}.mp3`);
+      console.log(`تم حذف هذا الصوت ${tmpDir}/${title}.mp3`);
     }
   });
 };
