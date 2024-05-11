@@ -8,11 +8,10 @@ let handler = async (m, {
     text,
     command
 }) => {
-            if (!text) return m.reply("هذا الامر خاص ل ويكيبيديا للاستعمال نستخدمه مثل \n*.wiki القمر*")
-            await m.reply(wait)
+            if (!text) return m.reply("هذا الامر خاص ل ويكيبيديا للاستعمال نستخدمه مثل \n*.ويكي القمر*")
             try {
                 let item = await Wiki(text)
-                let cap = `🔍 *[ RESULT ]*
+                let cap = `*[ النتيجة ]*
 
 📌 *:* ${item[0].judul}
 📋 *:* ${item[0].wiki}

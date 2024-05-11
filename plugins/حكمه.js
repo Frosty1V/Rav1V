@@ -1,5 +1,5 @@
 const handler = async (m, {conn, text}) => {
-  m.reply(`⌬*الحكمة*⌬*\n\n➢ *"${pickRandom(global.hekma)}"*\n⌬━━━━━━⌬`);
+  m.reply(`*⌬الحكمة⌬*\n\n➢ *"${pickRandom(global.hekma)}"*\n⌬━━━━━━⌬`);
 };
 handler.tags = ['frasss'];
 handler.command = ['حكمه','حكمة'];
