@@ -3,13 +3,13 @@ let handler = m => m
  let chat = global.db.data.chats[m.chat] 
   
  if (/^بوت/i.test(m.text) ) { 
-     conn.reply(m.chat, `اسمي فروست`, m) 
+     conn.reply(m.chat, `اسمي راف`, m) 
  }
    if (/^سنو/i.test(m.text) ) { 
-     conn.reply(m.chat, `اصبح اسمي فروست`, m) 
+     conn.reply(m.chat, `اصبح اسمي راف`, m) 
 
     }
-if (/^فروست/i.test(m.text) ) {
+if (/^راف/i.test(m.text) ) {
     conn.reply(m.chat, `في شي تريده ؟`, m)
  }
        if (/بوت خرا/i.test(m.text) ) {
@@ -17,7 +17,7 @@ if (/^فروست/i.test(m.text) ) {
 
  }
          if (/مين عمك ؟/i.test(m.text) ) {
-    conn.reply(m.chat, `سنو عمي`, m) 
+    conn.reply(m.chat, `فروست عمي`, m) 
 
 }
             if (/بوت غبي/i.test(m.text) ) { 
