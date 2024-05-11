@@ -68,10 +68,8 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 
 handler.help = ['play'].map((v) => v + ' <query>');
 handler.tags = ['downloader'];
-handler.command = ['بحث', 'songs', 'ytmp3doc','اغنيه']
+handler.command = ['بحث']
 
-handler.exp = 0;
-handler.diamond = false;
 
 export default handler;
     
