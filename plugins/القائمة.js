@@ -90,8 +90,8 @@ let str = `
 *▫️دمج*
 *▫️بحث*
 *▫️صور*
-*▫️صوره*
 *▫️بروفايل*
+*▫️سؤال*
 `
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
 
