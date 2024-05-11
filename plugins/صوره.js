@@ -17,7 +17,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     }
 
     // Mengirim 10 gambar secara acak
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 1; i++) {
       let imageUrl = gambarUrls[i];
       let imageRes = await fetch(imageUrl);
       let imageBuffer = await imageRes.buffer();
@@ -36,5 +36,5 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
 handler.help = ['pinterest2']
 handler.tags = ['downloader']
-handler.command = /^صور$/i
+handler.command = /^صورة|صوره$/i
 export default handler
